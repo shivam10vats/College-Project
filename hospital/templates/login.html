@@ -1,0 +1,353 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<div class="login-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-7">
+                <div class="login-card">
+                    <div class="card-header-section">
+                        <div class="hospital-logo">
+                            <i class="fas fa-hospital-alt"></i>
+                        </div>
+                        <h2>Admin Login</h2>
+                        <p>Welcome back! Please login to your account</p>
+                    </div>
+                    
+                    <div class="card-body-section">
+                        {% if success %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <i class="fas fa-check-circle mr-2"></i>{{ success }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <script>
+                                setTimeout(function() {
+                                    window.location.href = "{% url 'admin_dashboard' %}";
+                                }, 2000);
+                            </script>
+                        {% endif %}
+
+                        {% if error == 'yes' %}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>Invalid Username or Password
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% elif error %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>{{ error }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endif %}
+                        
+                        <form method="POST" class="login-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="uname">
+                                    <i class="fas fa-user mr-2"></i>Username
+                                </label>
+                                <input type="text" class="form-control" id="uname" name="uname" 
+                                       placeholder="Enter admin username" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pwd">
+                                    <i class="fas fa-lock mr-2"></i>Password
+                                </label>
+                                <input type="password" class="form-control" id="pwd" name="pwd" 
+                                       placeholder="Enter password" required>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="forgot-password-link">
+                            <a href="{% url 'forgot_password' %}" class="btn btn-link">
+                                <i class="fas fa-key mr-2"></i>Forgot Password?
+                            </a>
+                        </div>
+                        
+                        <div class="register-link">
+                            <p>Don't have an account? 
+                                <a href="{% url 'register_admin' %}" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-user-plus mr-2"></i>Register Admin
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="support-info">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="support-content">
+                            <h5>Need Help?</h5>
+                            <p>Contact our support team for assistance</p>
+                            <div class="support-details">
+                                <div class="support-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+91 6201649707</span>
+                                </div>
+                                <div class="support-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>support@hospital.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.card-header-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.hospital-logo {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+}
+
+.card-header-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-header-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.card-body-section {
+    padding: 40px 30px;
+}
+
+.login-form .form-group {
+    margin-bottom: 25px;
+}
+
+.login-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-form .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.form-actions {
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-outline-primary {
+    border: 2px solid #667eea;
+    color: #667eea;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-link:hover {
+    color: #764ba2;
+    text-decoration: none;
+}
+
+.forgot-password-link {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.register-link {
+    text-align: center;
+}
+
+.register-link p {
+    margin: 0;
+    color: #666;
+}
+
+.support-info {
+    margin-top: 30px;
+}
+
+.support-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.support-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.support-content h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.support-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.support-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.support-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.support-item i {
+    width: 20px;
+    color: #667eea;
+}
+
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px 0;
+    }
+    
+    .card-header-section,
+    .card-body-section {
+        padding: 30px 20px;
+    }
+    
+    .hospital-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .card-header-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .support-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+{% endblock %} 

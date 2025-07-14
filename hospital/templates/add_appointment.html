@@ -1,0 +1,83 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" type="text/css" href="/static/css/mystyle.css">
+<style>
+    .add-appointment-container {
+        margin: 60px auto;
+        max-width: 450px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        padding: 35px 35px 25px 35px;
+    }
+    .add-appointment-container h2 {
+        color: #007bff;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    .form-group label {
+        font-weight: 500;
+        color: #333;
+    }
+    .form-control {
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        margin-bottom: 18px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+<div class="add-appointment-container">
+    <h2 class="text-center"><i class="fas fa-calendar-plus"></i> Add Appointment</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="patient">Patient</label>
+            <select class="form-control" id="patient" name="patient" required>
+                <option value="">Select Patient</option>
+                {% for p in patients %}
+                <option value="{{ p.id }}">{{ p.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="doctor">Doctor</label>
+            <select class="form-control" id="doctor" name="doctor" required>
+                <option value="">Select Doctor</option>
+                {% for d in doctors %}
+                <option value="{{ d.id }}">{{ d.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="appointment_date">Date</label>
+            <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+        </div>
+        <div class="form-group">
+            <label for="appointment_time">Time</label>
+            <input type="time" class="form-control" id="appointment_time" name="appointment_time" required>
+        </div>
+        <button type="submit" class="form-control btn btn-primary"><i class="fas fa-plus-circle"></i> Add Appointment</button>
+    </form>
+</div>
+{% if error == 'no' %}
+<script>
+    alert('Appointment saved successfully!');
+    window.location.href = "{% url 'view_appointment' %}";
+</script>
+{% elif error == 'yes' %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endif %}
+{% endblock %} 

@@ -1,0 +1,650 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Simple Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hospital Management System</h1>
+                    <p class="hero-subtitle">Efficiently manage your hospital operations with our comprehensive system. Handle doctors, patients, and appointments with ease.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Patients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Doctors</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                    
+                    {% if not request.user.is_staff %}
+                    <div class="hero-buttons">
+                        <a href="{% url 'register_admin' %}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-user-plus mr-2"></i>Register Admin
+                        </a>
+                        <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image">
+                    <i class="fas fa-hospital"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>System Features</h2>
+            <p>Everything you need to manage your hospital efficiently</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Doctor Management</h4>
+                    <p>Add, view, and manage doctor information including specialties, contact details, and availability.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Profile Management</li>
+                        <li><i class="fas fa-check"></i> Schedule Tracking</li>
+                        <li><i class="fas fa-check"></i> Contact Information</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h4>Patient Management</h4>
+                    <p>Comprehensive patient records management with medical history, contact information, and treatment plans.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Medical Records</li>
+                        <li><i class="fas fa-check"></i> Treatment History</li>
+                        <li><i class="fas fa-check"></i> Secure Storage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h4>Appointment System</h4>
+                    <p>Efficient appointment booking system with doctor-patient matching and schedule management.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Smart Scheduling</li>
+                        <li><i class="fas fa-check"></i> Conflict Detection</li>
+                        <li><i class="fas fa-check"></i> Easy Booking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>How to Use the System</h2>
+            <p>Simple steps to get started with our hospital management system</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="process-card">
+                    <h3>For Administrators</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Register & Verify</h5>
+                                <p>Create your admin account and verify your email with OTP</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Add Doctors</h5>
+                                <p>Register doctors and medical professionals in the system</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Manage Patients</h5>
+                                <p>Create and maintain comprehensive patient records</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Schedule Appointments</h5>
+                                <p>Book appointments and manage the hospital schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="process-card">
+                    <h3>For Patients</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Contact Hospital</h5>
+                                <p>Reach out to the hospital administration for registration</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Provide Information</h5>
+                                <p>Share your personal and medical details for registration</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Get Appointment</h5>
+                                <p>Receive confirmation for your scheduled appointment</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Visit Hospital</h5>
+                                <p>Arrive on time for your consultation with the assigned doctor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Actions Section -->
+<section class="quick-actions-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Quick Actions</h2>
+            <p>Access frequently used features</p>
+        </div>
+        
+        {% if request.user.is_staff %}
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h5>Add Doctor</h5>
+                    <p>Register new medical professionals</p>
+                    <a href="{% url 'add_doctor' %}" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h5>Add Patient</h5>
+                    <p>Create new patient records</p>
+                    <a href="{% url 'add_patient' %}" class="btn btn-success">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h5>Book Appointment</h5>
+                    <p>Schedule patient consultations</p>
+                    <a href="{% url 'add_appointment' %}" class="btn btn-info">Get Started</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h5>View Appointments</h5>
+                    <p>Manage all scheduled appointments</p>
+                    <a href="{% url 'view_appointment' %}" class="btn btn-warning">View All</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <h5>Admin Login</h5>
+                    <p>Access the management dashboard</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Login Now</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h5>Contact Us</h5>
+                    <p>Get in touch for support</p>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Need Help?</h4>
+                            <p>If you need assistance with the system or have any questions, please don't hesitate to contact us.</p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <strong>Phone:</strong>
+                                        <p>+91 6201649707</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <strong>Email:</strong>
+                                        <p>support@hospital.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <strong>Hours:</strong>
+                                        <p>Mon-Fri 8:00 AM - 6:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="support-illustration">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h5>24/7 Support Available</h5>
+                            <p>Our support team is here to help you!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero-section {
+    background: white;
+    color: #333;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.hero-image {
+    font-size: 8rem;
+    opacity: 0.8;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.features-section {
+    background: white;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.feature-card h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.feature-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-list i {
+    color: #28a745;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    background: #f8f9fa;
+}
+
+.process-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.process-card h3 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.step-content p {
+    color: #666;
+    margin: 0;
+}
+
+/* Quick Actions Section */
+.quick-actions-section {
+    background: white;
+}
+
+.action-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.action-card h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.action-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #f8f9fa;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-card h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.contact-item i {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.support-illustration {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+</style>
+{% endblock %}

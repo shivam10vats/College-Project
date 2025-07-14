@@ -1,0 +1,830 @@
+
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">About Our Hospital Management System</h1>
+                    <p class="hero-subtitle">We are dedicated to revolutionizing healthcare management through innovative technology solutions that enhance patient care and streamline hospital operations.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Patients Served</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Medical Staff</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Hospital Management" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Company Overview Section -->
+<section class="company-overview-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="section-header">
+                    <h2>Our Story</h2>
+                    <p class="lead">Founded with a vision to transform healthcare management</p>
+                </div>
+                <div class="company-content">
+                    <p>Our Hospital Management System was born from a simple yet powerful idea: to make healthcare management more efficient, patient-friendly, and technologically advanced. We understand the challenges that healthcare providers face daily and have developed a comprehensive solution that addresses these needs.</p>
+                    <p>Since our inception, we have been committed to providing cutting-edge technology solutions that help hospitals and medical facilities deliver better patient care while optimizing their operational efficiency. Our system is designed to handle everything from patient registration to appointment scheduling, from doctor management to billing processes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide innovative healthcare management solutions that enhance patient care, streamline hospital operations, and improve the overall healthcare experience for both medical professionals and patients.</p>
+                    <ul class="mission-points">
+                        <li><i class="fas fa-check"></i> Improve patient care quality</li>
+                        <li><i class="fas fa-check"></i> Streamline hospital operations</li>
+                        <li><i class="fas fa-check"></i> Enhance medical staff efficiency</li>
+                        <li><i class="fas fa-check"></i> Reduce administrative burden</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading provider of healthcare management solutions, setting industry standards for innovation, reliability, and user experience in the healthcare technology sector.</p>
+                    <ul class="vision-points">
+                        <li><i class="fas fa-star"></i> Industry leadership in healthcare tech</li>
+                        <li><i class="fas fa-star"></i> Global reach and impact</li>
+                        <li><i class="fas fa-star"></i> Continuous innovation</li>
+                        <li><i class="fas fa-star"></i> Excellence in customer service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values Section -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we do</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Patient-Centric</h4>
+                    <p>Every feature we develop prioritizes patient care and comfort.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Security & Privacy</h4>
+                    <p>We maintain the highest standards of data security and patient privacy.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Continuously improving and adapting to new healthcare challenges.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Reliability</h4>
+                    <p>Providing dependable solutions that healthcare providers can trust.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>What We Offer</h2>
+            <p>Comprehensive healthcare management solutions</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>Doctor Management</h4>
+                    <p>Efficiently manage medical staff, their schedules, and specializations with our comprehensive doctor management system.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h4>Patient Records</h4>
+                    <p>Maintain detailed patient records, medical history, and treatment plans in a secure, organized manner.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h4>Appointment Scheduling</h4>
+                    <p>Streamlined appointment booking system that reduces wait times and improves patient satisfaction.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Analytics & Reports</h4>
+                    <p>Comprehensive reporting and analytics to help make data-driven decisions for better healthcare delivery.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Access</h4>
+                    <p>Access your hospital management system from anywhere with our responsive mobile-friendly interface.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock technical support to ensure your system runs smoothly at all times.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Our Team</h2>
+            <p>Meet the experts behind our success</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Dr. John Smith</h4>
+                        <p class="team-role">Chief Medical Officer</p>
+                        <p class="team-description">Leading our medical technology initiatives with over 15 years of healthcare experience.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Sarah Johnson</h4>
+                        <p class="team-role">Technical Director</p>
+                        <p class="team-description">Expert in healthcare software development with a passion for user experience.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Michael Chen</h4>
+                        <p class="team-role">Operations Manager</p>
+                        <p class="team-description">Ensuring smooth operations and exceptional customer service delivery.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Hospitals Served</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Patients Managed</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Medical Staff</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to transform your healthcare management?</p>
+                </div>
+                <div class="contact-info">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <h5>Call Us</h5>
+                                <p>+91 6201649707</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <h5>Email Us</h5>
+                                <p>info@hospitalmgmt.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h5>Visit Us</h5>
+                                <p>Shivpuri, Patna, Bihar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="{% url 'register_admin' %}" class="btn btn-outline-primary btn-lg">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    color: #333;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1976d2;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.hero-image img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Company Overview Section */
+.company-overview-section {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.company-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.mission-card, .vision-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #81c784 0%, #64b5f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.mission-card h3, .vision-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.mission-card p, .vision-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.mission-points, .vision-points {
+    list-style: none;
+    padding: 0;
+}
+
+.mission-points li, .vision-points li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.mission-points i {
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+
+.vision-points i {
+    color: #ffc107;
+    margin-right: 0.5rem;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #81c784 0%, #64b5f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+}
+
+.value-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    border-color: #4caf50;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.2);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #81c784 0%, #64b5f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.team-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.team-info h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.team-role {
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.team-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.team-social a {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4caf50;
+    transition: all 0.3s ease;
+}
+
+.team-social a:hover {
+    background: #4caf50;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Statistics Section */
+.stats-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+    color: #333;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #4caf50;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-info {
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-item i {
+    font-size: 2.5rem;
+    color: #4caf50;
+    margin-bottom: 1rem;
+}
+
+.contact-item h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-item p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+.btn-outline-primary {
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: #4caf50;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .mission-card, .vision-card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .team-image {
+        height: 200px;
+    }
+}
+</style>
+{% endblock %}

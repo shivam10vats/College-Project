@@ -1,0 +1,181 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container" style="margin-top: 50px;">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h3 class="mb-0"><i class="fas fa-shield-alt mr-2"></i>SMS Verification</h3>
+                </div>
+                <div class="card-body p-4">
+                    {% if success %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="fas fa-check-circle mr-2"></i>{{ success }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Proceed to Login
+                        </a>
+                    </div>
+                    {% else %}
+                    
+                    {% if error %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>{{ error }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            <i class="fas fa-info-circle mr-2"></i>{{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-primary" style="font-size: 4rem;"></i>
+                        <h4 class="mt-3 text-primary">Check Your SMS</h4>
+                        <p class="text-muted">We've sent a verification code to:</p>
+                        <p class="font-weight-bold text-dark">{{ mobile }}</p>
+                        
+                        <!-- Development/Testing: Show OTP -->
+                        {% if request.session.otp_code %}
+                        <div class="alert alert-info mt-3" role="alert">
+                            <strong>Development Mode:</strong> Your OTP is: 
+                            <span class="font-weight-bold text-primary" style="font-size: 1.2rem;">{{ request.session.otp_code }}</span>
+                            <br><small class="text-muted">This is shown for testing purposes only.</small>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="otp" class="font-weight-bold">
+                                <i class="fas fa-key mr-2"></i>Enter Verification Code
+                            </label>
+                            <input type="text" class="form-control form-control-lg text-center" 
+                                   id="otp" name="otp" required 
+                                   placeholder="Enter 6-digit code" 
+                                   maxlength="6" pattern="[0-9]{6}"
+                                   style="font-size: 1.5rem; letter-spacing: 0.5rem;">
+                            <small class="form-text text-muted">Enter the 6-digit code sent to your mobile number.</small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success btn-block btn-lg">
+                            <i class="fas fa-check mr-2"></i>Verify SMS
+                        </button>
+                    </form>
+                    
+                    <div class="text-center mt-4">
+                        <p class="text-muted">Didn't receive the code?</p>
+                        <a href="{% url 'resend_otp' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-redo mr-2"></i>Resend Code
+                        </a>
+                    </div>
+                    
+                    <hr class="my-4">
+                    
+                    <div class="text-center">
+                        <a href="{% url 'register_admin' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left mr-2"></i>Back to Registration
+                        </a>
+                    </div>
+                    
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Information Card -->
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-body">
+                    <h5 class="text-primary font-weight-bold">
+                        <i class="fas fa-info-circle mr-2"></i>Verification Tips
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success mr-2"></i>
+                            Check your SMS inbox for the verification code
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success mr-2"></i>
+                            The verification code expires in 10 minutes
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success mr-2"></i>
+                            You can request a new code if needed
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success mr-2"></i>
+                            Make sure to enter the code exactly as received
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.form-control-lg {
+    height: 60px;
+    font-weight: bold;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.btn-lg {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+}
+
+.alert {
+    border-radius: 8px;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+}
+</style>
+
+<script>
+// Auto-focus on OTP input
+document.addEventListener('DOMContentLoaded', function() {
+    const otpInput = document.getElementById('otp');
+    if (otpInput) {
+        otpInput.focus();
+    }
+});
+
+// Auto-format OTP input (numbers only)
+document.getElementById('otp').addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+// Auto-submit when 6 digits are entered
+document.getElementById('otp').addEventListener('input', function() {
+    if (this.value.length === 6) {
+        this.form.submit();
+    }
+});
+</script>
+{% endblock %} 

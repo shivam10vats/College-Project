@@ -1,0 +1,124 @@
+/* Navigation Bar */
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-link:hover {
+  color: #ffc107 !important;
+  background-color: #17a2b8;
+  border-radius: 10px;
+}
+.navbar-brand:hover {
+  color: #ffc107 !important;
+  font-weight: bold;
+}
+
+/* Card Containers */
+.container, .add-doctor-container, .add-patient-container, .add-appointment-container, .dashboard-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 30px 30px 20px 30px;
+  margin-bottom: 30px;
+}
+
+/* Headings */
+h2, .dashboard-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+/* Forms */
+.form-group label {
+  font-weight: 500;
+  color: #333;
+}
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  margin-bottom: 18px;
+  font-size: 1em;
+  padding: 10px 12px;
+}
+.form-control:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 0 2px rgba(23,162,184,0.15);
+}
+.btn-primary, .btn-info, .btn-success, .btn-danger {
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-primary {
+  background-color: #17a2b8;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #138496;
+}
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #b52a37;
+}
+.btn-info {
+  background-color: #007bff;
+  border: none;
+}
+.btn-info:hover {
+  background-color: #0056b3;
+}
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Tables */
+.table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table th, .table td {
+  vertical-align: middle !important;
+  font-size: 1em;
+}
+.table thead th {
+  background: #17a2b8;
+  color: #fff;
+  border: none;
+}
+.table-hover tbody tr:hover {
+  background-color: #e3f7fa;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  font-size: 1.1em;
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dashboard-row { flex-direction: column; gap: 24px; }
+  .dashboard-card { max-width: 100%; }
+  .container, .add-doctor-container, .add-patient-container, .add-appointment-container, .dashboard-container {
+    padding: 18px 6px 12px 6px;
+  }
+}
+
+
+
+
+
+

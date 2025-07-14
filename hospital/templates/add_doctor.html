@@ -1,0 +1,60 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="/static/css/mystyle.css">
+<style>
+    .add-doctor-container {
+        margin-top: 100px;
+        max-width: 400px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 30px 30px 20px 30px;
+    }
+    .add-doctor-container h2 {
+        color: #007bff;
+        font-weight: bold;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="container add-doctor-container">
+    <h2 class="text-center"><i class="fas fa-user-md"></i> Add Doctor</h2>
+    <br>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Doctor Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Doctor name" required>
+        </div>
+        <div class="form-group">
+            <label for="contact_number">Contact</label>
+            <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter contact number" required>
+        </div>
+        <div class="form-group">
+            <label for="specialization">Specialization</label>
+            <input type="text" class="form-control" id="specialization" name="specialization" placeholder="Enter Specialization" required>
+        </div>
+        <br>
+        <button type="submit" class="form-control btn btn-primary"><i class="fas fa-plus-circle"></i> Add Doctor</button>
+    </form>
+</div>
+
+{% if error == 'no' %}
+<script>
+    alert('Record Saved Successfully');
+    window.location.href = "{% url 'view_doctor' %}";
+</script>
+{% elif error == 'yes' %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endif %}
+{% endblock %}

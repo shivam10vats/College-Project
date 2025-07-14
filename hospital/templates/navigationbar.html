@@ -1,0 +1,101 @@
+
+<html>
+<head>
+    {% load static %}
+    <title>Hospital Management System</title>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link rel= "stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+
+<!--  data table cdn start-->
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.2.4/js/dataTables.buttons.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.2.4/js/buttons.dataTables.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/3.2.4/js/buttons.html5.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.4/css/buttons.dataTables.css">
+
+<script>
+  $(document).ready(function(){
+    $('#example').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'copyHtml5',
+        'excelHtml5',
+        'csvHtml5',
+        'pdfHtml5'
+      ],
+    });
+  });
+</script>
+
+<!--  data table cdn end -->
+</head>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <dev class ="container-fluid">
+<a class="navbar-brand" href="#">Hospital Management System</a>
+  <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+<span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="myMenu">
+    <ul class="navbar-nav text-center ml-auto">
+
+      {%  if not request.user.is_staff %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'home'%}"><i class="fas fa-home"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'about'%}"><i class="far fa-address-card"></i> About</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}"><i class="fas fa-phone-square"></i> Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'register_admin' %}"><i class="fas fa-user-plus"></i> Register Admin</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+      {% endif %}
+
+      {%  if request.user.is_staff %}
+      <li class="nav-item"><a class="nav-link" href="{% url 'home'%}"><i class="fas fa-home"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'admin_profile'%}"><i class="fas fa-user-cog"></i> Profile</a></li>
+      
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle= "dropdown" href="#">Doctor</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'add_doctor'%}"> Add Doctor </a>
+        <a class="dropdown-item" href="{% url 'view_doctor'%}"> View Doctor</a>
+        {% comment %} <a class="dropdown-item" href="#"> Delete Doctor</a> {% endcomment %}
+      </dev>
+      </li>
+
+      <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Patient</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'add_patient' %}"> Add Patient</a>
+    <a class="dropdown-item" href="{% url 'view_patient' %}"> View Patient</a>
+    {% comment %} <a class="dropdown-item" href="#"> Delete Patient</a> {% endcomment %}
+  </div>
+</li>
+
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle= "dropdown" href="#">Appointment</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'add_appointment' %}"> Add Appointment</a>
+        <a class="dropdown-item" href="{% url 'view_appointment' %}"> View Appointment</a>
+        {% comment %} <a class="dropdown-item" href="#"> Delete Doctor</a> {% endcomment %}
+      </dev>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">Logout</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  </dev>
+</nav>
+{% block body %}
+
+{% endblock  %}
+</html>

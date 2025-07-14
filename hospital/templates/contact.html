@@ -1,0 +1,645 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="contact-hero">
+    <div class="container">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="hero-title">Get In Touch</h1>
+                <p class="hero-subtitle">We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h4>Call Us</h4>
+                    <p>Speak directly with our support team</p>
+                    <div class="contact-details">
+                        <a href="tel:+916201649707" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 6201649707
+                        </a>
+                        <a href="tel:+919430420561" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 9430420561
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email Us</h4>
+                    <p>Send us an email anytime</p>
+                    <div class="contact-details">
+                        <a href="mailto:shivamvats581@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> shivamvats581@gmail.com
+                        </a>
+                        <a href="mailto:support@hospitalmgmt.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> support@hospitalmgmt.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Visit Us</h4>
+                    <p>Our office location</p>
+                    <div class="contact-details">
+                        <a href="https://maps.google.com/maps?q=Shivpuri+Patna" class="contact-link" target="_blank">
+                            <i class="fas fa-map-marker-alt"></i> Shivpuri, Patna, Bihar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form-card">
+                    <div class="section-header text-center">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                    </div>
+                    
+                    <form class="contact-form" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select class="form-control" id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Technical Support">Technical Support</option>
+                                        <option value="Feature Request">Feature Request</option>
+                                        <option value="Bug Report">Bug Report</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Please describe your inquiry in detail..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Working Hours & Additional Info -->
+<section class="additional-info-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Working Hours</h4>
+                    <div class="working-hours">
+                        <div class="day">
+                            <span>Monday - Friday</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="day">
+                            <span>Saturday</span>
+                            <span>9:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="day">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Emergency technical support available round the clock for critical issues.</p>
+                    <div class="emergency-contact">
+                        <a href="tel:+916201649707" class="emergency-link">
+                            <i class="fas fa-phone"></i> Emergency: +91 6201649707
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Response Time</h4>
+                    <p>We typically respond to inquiries within 2-4 hours during business hours.</p>
+                    <div class="response-info">
+                        <div class="response-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Email: Within 4 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Phone: Immediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="faq-accordion" id="faqAccordion">
+                    <div class="faq-item">
+                        <div class="faq-header" id="faq1">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1">
+                                    How do I register as an admin for the hospital management system?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse1" class="collapse show" data-parent="#faqAccordion">
+                            <div class="faq-body">
+                                You can register as an admin by clicking the "Register Admin" button in the navigation. You'll need to provide your details and verify your mobile number with an OTP.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header" id="faq2">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2">
+                                    What features are available in the hospital management system?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse2" class="collapse" data-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Our system includes doctor management, patient management, appointment scheduling, admin dashboard with statistics, and comprehensive reporting features.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header" id="faq3">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse3">
+                                    Is the system secure and HIPAA compliant?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse3" class="collapse" data-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Yes, we prioritize security and data protection. Our system implements industry-standard security measures to protect patient information and ensure compliance with healthcare regulations.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header" id="faq4">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4">
+                                    Can I access the system from mobile devices?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse4" class="collapse" data-parent="#faqAccordion">
+                            <div class="faq-body">
+                                Absolutely! Our system is fully responsive and works seamlessly on desktop computers, tablets, and mobile phones.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Find Us</h2>
+            <p>Visit our office in Patna, Bihar</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.5!2d85.1376!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f29937c52d4fbd%3A0x831a0e05f607b270!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Hero Section */
+.contact-hero {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    color: #333;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.contact-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #81c784 0%, #64b5f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+}
+
+.contact-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #764ba2;
+    text-decoration: none;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-form-card {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* Additional Info Section */
+.additional-info-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #81c784 0%, #64b5f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+}
+
+.info-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.working-hours .day {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.working-hours .day:last-child {
+    border-bottom: none;
+}
+
+.emergency-link {
+    color: #dc3545;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.emergency-link:hover {
+    color: #c82333;
+    text-decoration: none;
+}
+
+.response-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.response-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.response-item i {
+    color: #28a745;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.faq-accordion {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-header {
+    background: #f8f9fa;
+}
+
+.faq-header .btn-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem;
+    border: none;
+    background: none;
+}
+
+.faq-header .btn-link:hover {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.faq-header .btn-link.collapsed {
+    color: #333;
+}
+
+.faq-body {
+    padding: 1.5rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%);
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .contact-card, .info-card {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-form-card {
+        padding: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-hero {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .contact-card, .info-card {
+        padding: 1.5rem;
+    }
+}
+</style>
+{% endblock %} 
